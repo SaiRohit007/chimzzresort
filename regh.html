@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            outline: 0px;
+        }
+        .mcon{
+            width: 100%;
+            height: 100vh;
+        }
+        .nav{
+            width: 100%;
+            height: 15vh;
+            background:linear-gradient(rgba(255, 234, 45, 0.6),rgba(250, 65, 210, 0.7));
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 50px;
+            font-family: 'Anton', sans-serif;
+            
+        }
+        .con{
+            width: 100%;
+            height: 85vh;
+            background:url("https://www.wallpaperup.com/uploads/wallpapers/2014/03/25/309519/07837a1d3dc4d2921cfb9fa9ed98229d.jpg");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sco{
+            width: 30%;
+            height: 60vh;
+            background:transparent;
+            border: 2px solid white;
+        }
+        .i1{
+            width: 25%;
+            height: 40px;
+            position: absolute;
+            top: 35%;
+            left: 37%;
+            
+        }
+        .i2{
+            width: 25%;
+            height: 40px;
+            position: absolute;
+            top: 45%;
+            left: 37%;
+            
+        }
+        .i3{
+            width: 25%;
+            height: 40px;
+            position: absolute;
+            top: 55%;
+            left: 37%;
+            
+        }
+        ::placeholder{
+            text-align: center;
+        }
+        .i4{
+            color: white;
+            position: absolute;
+            top: 62%;
+            left: 37%; 
+        }
+        .i5{
+            color: white;
+            position: absolute;
+            top: 64%;
+            left: 37%; 
+        }
+        .i6{
+            color: white;
+            position: absolute;
+            top: 66%;
+            left: 37%; 
+        }
+        .i7{
+            color: white;
+            position: absolute;
+            top: 68%;
+            left: 37%; 
+        }
+        .i8{
+            color: white;
+            position: absolute;
+            top: 70%;
+            left: 37%; 
+        }
+        .i9{
+            width: 25%;
+            height: 40px;
+            position: absolute;
+            top: 75%;
+            left: 37%;
+            background:blue;
+            
+        }
+        .i10{
+            position: absolute;
+            top: 83%;
+            left: 44%; 
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="mcon">
+        <nav class="nav">Registration</nav>
+        <div class="con">
+            <div class="sco">
+                <div><input type="email" placeholder="Enter your registeration no" class="i1" onkeyup="valem(this)" id="t1"></div>
+                <div><input type="text" placeholder="Enter your mobile number" class="i2" onkeyup="valph(this)" id="t2"></div>
+                <div><input type="password" placeholder="create new password"class="i3" onkeyup="valpsd(this)" id="t3"></div>
+                <div class="psdcon">
+                <div class="i4">Must starts with capital letter</div>
+                <div class="i5">Must contain atleast one lower case</div>
+                <div class="i6">Must contain atleast one digit</div>
+                <div class="i7">Must contain atleast one symbol @#$%^&*</div>
+                <div class="i8">Minimun length is 8  </div>
+                </div>
+                <div><button onclick="reg()" class="i9">Register</button></div>
+                <div><a href="login.html" class="i10"><b> Click here to login</b></a></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function valem(e){
+            let re=/^[a-z0-9_]{1,}[.]?[a-z0-9_]{1,}[@][a-z]{3,}[.](com|co.in|in|org|asia)$/
+            if(re.test(e.value)){
+                e.style.border="2px solid green"
+            }
+            else{
+                e.style.border='2px solid red'
+            }
+        }
+        function valph(e){
+            if(/^[6-9][0-9]{9}$/.test(e.value)){
+                e.style.border="2px solid green" 
+            }
+            else{
+                e.style.border='2px solid red'
+            }
+        }
+        function valpsd(e){
+            let divr=document.querySelectorAll(".psdcon div")
+            if(/^[A-Z]/.test(e.value)){
+                divr[0].style.color="green"
+            }
+            else{
+                divr[0].style.color="red"
+            }
+            if(/[a-z]/.test(e.value)){
+                divr[1].style.color="green"
+            }
+            else{
+                divr[1].style.color="red"
+            }
+            if(/[0-9]/.test(e.value)){
+                divr[2].style.color="green"
+            }
+            else{
+                divr[2].style.color="red"
+            }
+            if(/[@#$%^&*]/.test(e.value)){
+                divr[3].style.color="green"
+            }
+            else{
+                divr[3].style.color="red"
+            }
+            if(e.value.length>=8){
+                divr[4].style.color="green"
+            }
+            else{
+                divr[4].style.color="red"
+            }
+        }
+        function reg(){
+            let mid=document.getElementById('t1').value
+            localStorage.setItem('email',mid)
+            let pid=document.getElementById('t2').value
+            localStorage.setItem('phone',pid)
+            let psid=document.getElementById('t3').value
+            localStorage.setItem('password',psid)
+            window.location="./login.html"
+
+        }
+    </script>
+</body>
+</html>

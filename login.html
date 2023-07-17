@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            outline: 0px;
+        }
+        .mcon{
+            width: 100%;
+            height: 100vh;
+        }
+        .nav{
+            width: 100%;
+            height: 15vh;
+            background:linear-gradient(rgba(255, 234, 45, 0.6),rgba(250, 65, 210, 0.7));
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 50px;
+            font-family: 'Anton', sans-serif;
+            
+        }
+        .con{
+            width: 100%;
+            height: 85vh;
+            background:url("https://www.wallpaperup.com/uploads/wallpapers/2014/03/25/309519/07837a1d3dc4d2921cfb9fa9ed98229d.jpg");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sco{
+            width: 30%;
+            height: 50vh;
+            background:transparent;
+            border: 2px solid white;
+        }
+        .i1{
+            width: 25%;
+            height: 40px;
+            position: absolute;
+            top: 40%;
+            left: 37%;
+            
+        }
+        .i2{
+            width: 25%;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 37%;
+            
+        }
+        .i3{
+            width: 25%;
+            height: 40px;
+            position: absolute;
+            top: 70%;
+            left: 37%;
+            
+        }
+        .i4{
+            width: 25%;
+            height: 40px;
+            position: absolute;
+            top: 60%;
+            left: 37%;
+            background-color: blue;
+            
+        }
+        ::placeholder{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="mcon">
+        <nav class="nav">Hi! There.</nav>
+        <div class="con">
+            <div class="sco">
+                <div><input type="email" placeholder="Enter your mail id" class="i1" id="t1"></div>
+                <div><input type="password" placeholder="Enter your password" class="i2" id="t2"></div>
+                <div><button class="i4" onclick="login()">Login</button></div>
+                <div class="i3">
+                    <div style="color: white;">Are you new?</div>
+                    <div><a href="regh.html" style="color: white;"> Click Here to Register</a></div>
+                </div>
+               
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function login(){
+            let mail=document.getElementById('t1').value
+            let pass=document.getElementById('t2').value
+            let rmail=localStorage.getItem('email')
+            let rpass=localStorage.getItem('password')
+            if(mail==rmail && pass==rpass){
+                window.location="./pay.html"
+            }
+            else{
+                window.location="./regh.html"
+            }
+        }
+    </script>
+</body>
+</html>
